@@ -299,7 +299,7 @@ Can be any **ONE** of the following types:
 
 - "deb": The debian bundle (.deb).
 - "appimage": The AppImage bundle (.appimage).
-- "rpm"
+- "rpm: The Red Hat family bundle (.rpm)."
 - "msi": The Microsoft Installer bundle (.msi).
 - "nsis": The NSIS bundle (.exe).
 - "app": The macOS application bundle (.app).
@@ -334,7 +334,7 @@ Type: `object`
 | Name                                                                                                                                                   | Type    | Default | Description                                                                                                                                       |
 |--------------------------------------------------------------------------------------------------------------------------------------------------------|---------|---------|---------------------------------------------------------------------------------------------------------------------------------------------------|
 | <div className="anchor-with-padding" id="debconfig.depends">`depends`<a class="hash-link" href="#debconfig.depends"></a></div>                         | array?  | _null_  | The list of deb dependencies your application relies on.                                                                                          |
-| <div className="anchor-with-padding" id="debconfig.files">`files`<a class="hash-link" href="#debconfig.files"></a></div>                               | object  | _null_  | The files to include on the package.                                                                                                              |
+| <div className="anchor-with-padding" id="debconfig.files">`files`</div>                               | object  | _null_  | The files to include on the package.                                                                                                              |
 | <div className="anchor-with-padding" id="debconfig.desktoptemplate">`desktopTemplate`<a class="hash-link" href="#debconfig.desktoptemplate"></a></div> | string? | _null_  | Path to a custom desktop file Handlebars template.<br /><br />Available variables: `categories`, `comment` (optional), `exec`, `icon` and `name`. |
 
 ##### RpmConfig
@@ -343,11 +343,13 @@ Configuration for RedHat Family (.rpm) bundles.
 
 Type: `object`
 
-| Name                                                                                                                           | Type  | Default | Description                                                                                                                                       | 
-|--------------------------------------------------------------------------------------------------------------------------------|-------|---------|---------------------------------------------------------------------------------------------------------------------------------------------------|
-| <div className="anchor-with-padding" id="rpmconfig.epoch">`epoch`<a class="hash-link" href="#rpmconfig.epoch"></a></div>       | int   | 0       | The number of times this version of the software was released.                                                                                    |
-| <div className="anchor-with-padding" id="rpmconfig.files">`files`<a class="hash-link" href="#rpmconfig.files"></a></div>       | object | {}      | The files to include on the package.                                                                                                              |
-| <div className="anchor-with-padding" id="rpmconfig.release">`release`<a class="hash-link" href="#rpmconfig.release"></a></div> | string | "1"      | Path to a custom desktop file Handlebars template.<br /><br />Available variables: `categories`, `comment` (optional), `exec`, `icon` and `name`. |
+For more information on how rpm packages work see <a href="https://rpm-packaging-guide.github.io/#rpm-packaging-guide">here.</a>
+
+| Name                                                                                                                           | Type    | Default | Description                                                                                        | 
+|--------------------------------------------------------------------------------------------------------------------------------|---------|---------|----------------------------------------------------------------------------------------------------|
+| <div className="anchor-with-padding" id="rpmconfig.epoch">`epoch`<a class="hash-link" href="#rpmconfig.epoch"></a></div>       | int?    | 0       | epoch is a way to define weighted dependencies based on version numbers. It’s default value is 0.  |
+| <div className="anchor-with-padding" id="rpmconfig.files">`files`<a class="hash-link" href="#rpmconfig.files"></a></div>       | object  | {}      | The files to include on the package.                                                               |
+| <div className="anchor-with-padding" id="rpmconfig.release">`release`<a class="hash-link" href="#rpmconfig.release"></a></div> | string? | "1"     | The number of times this version of the software was released.                                     |                                                               |
 
 ##### MacConfig
 
