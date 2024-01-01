@@ -327,6 +327,7 @@ Adjust the `path` variable to match your application's version and name:
 [resource]: resources.md
 [sidecar]: sidecar.md
 [debian package]: https://wiki.debian.org/Packaging
+[rpm package]:https://rpm-packaging-guide.github.io/#rpm-packaging-guide
 [appimage]: https://appimage.org/
 [tauri-apps/tauri#1355]: https://github.com/tauri-apps/tauri/issues/1355
 [rust-lang/rust#57497]: https://github.com/rust-lang/rust/issues/57497
